@@ -1,0 +1,53 @@
+/* -----------------------------------------------------------------------
+   AWS Security Audit – Global Design System
+   ----------------------------------------------------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Palette */
+  --bg:          #080d1a;
+  --surface:     #0f1628;
+  --surface2:    #19233a;
+  --surface3:    #1e2d4a;
+  --border:      #253352;
+  --text:        #e8edf5;
+  --text-muted:  #8899b8;
+  --accent:      #6366f1;
+  --accent-dim:  rgba(99,102,241,.18);
+  --glow:        rgba(99,102,241,.35);
+
+  /* Severity */
+  --critical: #ef4444;
+  --high:     #f97316;
+  --medium:   #eab308;
+  --low:      #3b82f6;
+  --info:     #6b7280;
+
+  --radius: 14px;
+  --transition: .18s ease;
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* Utility */
+.mono { font-family: 'JetBrains Mono', monospace; }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Animated gradient background */
+@keyframes bgShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

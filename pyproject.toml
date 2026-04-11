@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aws-security-audit"
+version = "1.0.0"
+description = "Scan an AWS account and detect security risks"
+requires-python = ">=3.11"
+dependencies = [
+    "boto3>=1.34.0",
+    "botocore>=1.34.0",
+]
+
+[project.scripts]
+aws-security-audit = "scanner.main:main"
+
+# Inclui apenas os pacotes Python do projeto (exclui dashboard, terraform, etc.)
+[tool.setuptools.packages.find]
+include = ["scanner*", "reporting*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["scanner", "reporting"]
+omit = ["tests/*"]
