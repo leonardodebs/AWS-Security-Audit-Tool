@@ -2,6 +2,8 @@
 
 > **Auditoria de segurança automatizada para contas AWS** — detecta configurações incorretas, políticas IAM arriscadas, infraestrutura exposta e atividades suspeitas. Gera relatórios ricos em JSON e HTML. Implantável como uma Lambda agendada via Terraform.
 
+![Architecture Platform](assets/architecture_professional.png)
+
 ---
 
 ## Índice
